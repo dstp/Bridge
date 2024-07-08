@@ -141,6 +141,12 @@ Carte >> nom [
 ]
 
 { #category : 'accessing' }
+Carte >> nomH [
+
+	^ self pointH = 0 ifTrue: [  'x' ] ifFalse: [  self nom ]
+]
+
+{ #category : 'accessing' }
 Carte >> pointH [
 
 	^ self rang - 9 max: 0

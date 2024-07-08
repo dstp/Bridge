@@ -13,12 +13,14 @@ Class {
 NRB54MajeurFan >> ouvPalier1 [
 
 	^ self main pointH > 10
-		  ifTrue: [ self unPalier ]
+		  ifTrue: [ '1' , self coulPalier1  ]
 		  ifFalse: [ '' ]
 ]
 
 { #category : 'accessing' }
-NRB54MajeurFan >> ouvPalier2 [ 
+NRB54MajeurFan >> ouvPalier2 [
+
+	"jamais avec l'autre maajeure"
 
 	^ ''
 ]

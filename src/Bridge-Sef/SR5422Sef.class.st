@@ -8,3 +8,9 @@ Class {
 	#package : 'Bridge-Sef',
 	#tag : 'Sef'
 }
+
+{ #category : 'accessing' }
+SR5422Sef >> ouv2T [
+
+	^  '' 
+]

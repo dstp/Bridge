@@ -10,15 +10,9 @@ Class {
 }
 
 { #category : 'accessing' }
-NRB54MajeurSef >> ouvPalier1 [
+NRB54MajeurSef >> ouvPalier2 [
 
-	^ self main pointH > 10
-		  ifTrue: [ self unPalier ]
-		  ifFalse: [ '' ]
-]
-
-{ #category : 'accessing' }
-NRB54MajeurSef >> ouvPalier2 [ 
-
+	"jamais avec l'autre majeure"
+	
 	^ ''
 ]

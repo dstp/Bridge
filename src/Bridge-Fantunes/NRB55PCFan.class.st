@@ -13,7 +13,7 @@ Class {
 NRB55PCFan >> ouvPalier1 [
 
 	^ self main pointH > 10
-		  ifTrue: [ self unPalier ]
+		  ifTrue: [ '1' , self coulPalier1 ]
 		  ifFalse: [ '' ]
 ]
 

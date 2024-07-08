@@ -10,16 +10,15 @@ Class {
 }
 
 { #category : 'accessing' }
-NRB55PCSef >> ouvPalier1 [
+NRB55PCSef >> ouv2T [
 
-	^ self main pointH > 10
-		  ifTrue: [ self unPalier ]
+	^ self main perdantes = 3
+		  ifTrue: [ '2T' ]
 		  ifFalse: [ '' ]
 ]
 
 { #category : 'accessing' }
 NRB55PCSef >> ouvPalier2 [
-	"jamais avec l'autre majeure"
 
 	^ ''
 ]

@@ -3,11 +3,23 @@ Couleur d'au moins 6 cartes, ou de 5 cartes avec une courte (singleton ou chican
 "
 Class {
 	#name : 'NonReguliereSef',
-	#superclass : 'Distribution',
+	#superclass : 'ConventionSef',
 	#category : 'Bridge-Sef-Sef',
 	#package : 'Bridge-Sef',
 	#tag : 'Sef'
 }
+
+{ #category : 'accessing' }
+NonReguliereSef >> coulPalier1 [
+
+	^ self main laPlusLongue
+]
+
+{ #category : 'accessing' }
+NonReguliereSef >> coulPalier2 [
+
+	^ self main laPlusLongue
+]
 
 { #category : 'class tests' }
 NonReguliereSef >> estNonReguliere [
@@ -44,15 +56,15 @@ NonReguliereSef >> ouv2SA [
 { #category : 'accessing' }
 NonReguliereSef >> ouvPalier1 [
 
-	^ self main pointHL > 12
-		  ifTrue: [ self unPalier ]
+	^ ((self main pointHL > 12 or: [ self main pointH > 11 ]) and: [ self main pointHL < 24 ])
+		  ifTrue: [ '1' , self coulPalier1 ]
 		  ifFalse: [ '' ]
 ]
 
 { #category : 'accessing' }
 NonReguliereSef >> ouvPalier2 [
 
-	^ (self main pointH between: 10 and: 13)
-		  ifTrue: [ self deuxPalier ]
+	^ (self main pointH between: 6 and: 10)
+		  ifTrue: [ '2' , self coulPalier2 ]
 		  ifFalse: [ '' ]
 ]

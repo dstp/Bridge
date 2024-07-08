@@ -8,3 +8,11 @@ Class {
 	#package : 'Bridge-Sef',
 	#tag : 'Sef'
 }
+
+{ #category : 'accessing' }
+SR54CKSef >> ouv2T [
+
+	^ (self main pointHL between: 22 and: 23)
+		  ifTrue: [ '2T' ]
+		  ifFalse: [ '' ]
+]

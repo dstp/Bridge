@@ -3,7 +3,7 @@
 "
 Class {
 	#name : 'ReguliereSef',
-	#superclass : 'Distribution',
+	#superclass : 'ConventionSef',
 	#category : 'Bridge-Sef-Sef',
 	#package : 'Bridge-Sef',
 	#tag : 'Sef'
@@ -30,16 +30,24 @@ ReguliereSef >> estSemiReguliere [
 { #category : 'accessing' }
 ReguliereSef >> ouv1SA [
 
-	^ (self main pointH between: 15 and: 17)
-		  ifTrue: [ self unSA ]
+	^ (self main pointHL between: 15 and: 17)
+		  ifTrue: [ '1SA' ]
 		  ifFalse: [ '' ]
 ]
 
 { #category : 'accessing' }
 ReguliereSef >> ouv2SA [
 
-	^ (self main pointH between: 20 and: 21)
-		  ifTrue: [ self deuxSA ]
+	^ (self main pointHL between: 20 and: 21)
+		  ifTrue: [ '2SA' ]
+		  ifFalse: [ '' ]
+]
+
+{ #category : 'accessing' }
+ReguliereSef >> ouv2T [
+
+	^ (self main pointHL between: 22 and: 23)
+		  ifTrue: [ '2T' ]
 		  ifFalse: [ '' ]
 ]
 

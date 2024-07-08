@@ -147,11 +147,10 @@ Main >> distribution [
 			  nClass := 'NRT4441' , (couleurs copyFrom: 4 to: 4) asString ].
 		  distrib = '5440' ifTrue: [
 			  nClass := 'NRT' , (couleurs copyFrom: 1 to: 3) asString ].
-		  ((distrib copyFrom: 1 to: 1) >= '6' and: [
-			   (distrib copyFrom: 2 to: 3) < '4' ]) ifTrue: [
-			  nClass := 'NRUnicolore' ].
-		  distrib size > 4 ifTrue: [ nClass := 'NRUnicolore' ].
-			nClass := nClass , self convention.
+		  (distrib size > 4  or: [((distrib copyFrom: 1 to: 1) >= '6' and: [
+			   (distrib copyFrom: 2 to: 3) < '4' ])]) ifTrue: [
+			  nClass := 'NRUnicolore' , (couleurs copyFrom: 1 to: 1) asString ].
+			nClass := nClass , self convention .
 		  distribution := (self class environment at: nClass asSymbol) new
 			                  main: self ]
 ]
@@ -166,6 +165,31 @@ Main >> laPlusCourte [
 Main >> laPlusLongue [
 
 	^ self distribCouleurs first asString
+]
+
+{ #category : 'accessing' }
+Main >> laPlusLongueDe [
+
+	^ self assCoul first value
+]
+
+{ #category : 'accessing' }
+Main >> laSuivanteDe [
+
+	^ (self assCoul at: 2) value
+]
+
+{ #category : 'accessing' }
+Main >> leveesDeDefense [ 
+
+	^ self piques leveesDeDefense + self coeurs leveesDeDefense
+	  + self carreaux leveesDeDefense + self trefles leveesDeDefense
+]
+
+{ #category : 'accessing' }
+Main >> leveesDeJeu [ 
+
+	^ self piques leveesDeJeu + self coeurs leveesDeJeu + self carreaux leveesDeJeu + self trefles leveesDeJeu
 ]
 
 { #category : 'accessing' }
@@ -186,12 +210,25 @@ Main >> ouverture [
 ]
 
 { #category : 'accessing' }
+Main >> perdantes [ 
+
+	^ self piques perdantes + self coeurs perdantes + self carreaux perdantes + self trefles perdantes
+]
+
+{ #category : 'accessing' }
 Main >> piques [
 
 	^ piques ifNil: [
 		  piques := Pique newFrom:
 			              (self cartes select: [ :c |
 				               c couleur = Carte pique ]) ]
+]
+
+{ #category : 'accessing' }
+Main >> pointD [
+
+	^ self piques pointD + self coeurs pointD + self carreaux pointD
+	  + self trefles pointD
 ]
 
 { #category : 'accessing' }

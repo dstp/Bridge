@@ -8,3 +8,11 @@ Class {
 	#package : 'Bridge-Sef',
 	#tag : 'Sef'
 }
+
+{ #category : 'accessing' }
+NRB64EtPlusSef >> ouv2K [
+
+	^ (self main leveesDeJeu > 9.75 and: [ self main leveesDeDefense > 1.75 ])
+		  ifTrue: [ '2K' ]
+		  ifFalse: [ '' ]
+]

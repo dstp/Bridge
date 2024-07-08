@@ -24,9 +24,9 @@ SR54MajeurSef >> ouv2SA [
 ]
 
 { #category : 'accessing' }
-SR54MajeurSef >> ouvPalier1 [
+SR54MajeurSef >> ouv2T [
 
-	^ self main pointH > 10
-		  ifTrue: [ self unPalier ]
+	^ (self main pointHL between: 22 and: 23)
+		  ifTrue: [ '2T' ]
 		  ifFalse: [ '' ]
 ]

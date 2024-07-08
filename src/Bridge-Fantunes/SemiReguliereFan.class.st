@@ -3,7 +3,7 @@
 "
 Class {
 	#name : 'SemiReguliereFan',
-	#superclass : 'Distribution',
+	#superclass : 'ConventionFantunes',
 	#category : 'Bridge-Fantunes-Fantunes',
 	#package : 'Bridge-Fantunes',
 	#tag : 'Fantunes'
