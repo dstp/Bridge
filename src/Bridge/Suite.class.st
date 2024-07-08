@@ -21,6 +21,14 @@ Suite >> pointH [
 	^ self isEmpty ifTrue: [ 0 ] ifFalse: [ self sum ]
 ]
 
+{ #category : 'accessing' }
+Suite >> pointL [
+
+	^ self isEmpty
+		  ifTrue: [ 0 ]
+		  ifFalse: [ (self size max: 4) - 4 ]
+]
+
 { #category : 'printing' }
 Suite >> printOn: aStream [
 

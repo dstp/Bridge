@@ -29,7 +29,7 @@ NonReguliereSef >> estSemiReguliere [
 
 { #category : 'accessing' }
 NonReguliereSef >> ouv1SA [
-	"Non jamais sauf certaines mains 4441"
+	"Non jamais"
 
 	^ ''
 ]
@@ -44,7 +44,7 @@ NonReguliereSef >> ouv2SA [
 { #category : 'accessing' }
 NonReguliereSef >> ouvPalier1 [
 
-	^ self main pointH > 13
+	^ self main pointHL > 12
 		  ifTrue: [ self unPalier ]
 		  ifFalse: [ '' ]
 ]

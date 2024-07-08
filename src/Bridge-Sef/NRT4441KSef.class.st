@@ -12,7 +12,7 @@ Class {
 { #category : 'accessing' }
 NRT4441KSef >> ouvPalier1 [
 
-	^ self main pointH > 13
+	^ self main pointH > 11
 		  ifTrue: [ '1T' ]
 		  ifFalse: [ '' ]
 ]

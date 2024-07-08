@@ -1,95 +1,21 @@
 Class {
-	#name : 'DistibutionTest',
+	#name : 'DistibutionFanTest',
 	#superclass : 'TestCase',
 	#category : 'Bridge-Tests',
 	#package : 'Bridge-Tests'
 }
 
 { #category : 'running' }
-DistibutionTest >> setUp [
+DistibutionFanTest >> setUp [
 
 	super setUp.
 	Carte cartesTest
 ]
 
 { #category : 'tests' }
-DistibutionTest >> testCreation [
+DistibutionFanTest >> testCreation [
 	"
-	la distribution d'une main est décrite par un objet de l'arbre suivant
-	Distribution
-		Reguliere
-			R4333
-				R4333P
-				R4333C
-				R4333K
-				R4333T
-			R4432
-				R4432PK
-				R4432PT
-				R4432CK
-				R4432CT
-				R4432PC
-				R4432KT
-		SemiReguliere
-			SR5332
-				SR5332P
-				SR5332C
-				SR5332K
-				SR5332T
-		NonReguliere un unicolore de 6 cartes au moins sinon avec une courte 0-1
-			NRUnicolore
-			NRBicolore
-				NRB55
-					NRB55PC
-					NRB55PK
-					NRB55PT
-					NRB55CK
-					NRB55CT
-					NRB55KT
-				NRB5431
-					NRB54PCKT
-					NRB54PCTK
-					NRB54PKCT
-					NRB54PKTC
-					NRB54PTCK
-					NRB54PTCK
-					NRB54CPKT
-					NRB54CPTK
-					NRB54CKPT
-					NRB54CKTP
-					NRB54CTPK
-					NRB54CTKP
-					NRB54KPCT
-					NRB54KPTC
-					NRB54KCPT
-					NRB54KCTP
-					NRB54KTPC
-					NRB54KTCP
-					NRB54TPCK
-					NRB54TPKC
-					NRB54TCPK
-					NRB54TCKP
-					NRB54TKPC
-					NRB54TKCP
-			NRTricolore					
-				NRT4441
-					NRT4441P
-					NRT4441C
-					NRT4441K
-					NRT4441T
-				NRT5440
-					NRTPCK
-					NRTPCT
-					NRTPKT
-					NRTCPK
-					NRTCPT
-					NRTCKT
-					NRTKPC
-					NRTKPT
-					NRTKCT
-					NRTTPC
-					NRTTPK
-					NRTTCK			
+	la distribution d'une main est décrite par un objet de l'arbre Distribution
 	"
 
 	| m |
@@ -162,6 +88,5 @@ DistibutionTest >> testCreation [
 	m cartesFromString: '{A2222}{A332}{A2}{R2}'. "main semi reguliere 54 Majeur de 15+"
 	self assert: m ouverture equals: '1P'.
 	m cartesFromString: '{A222}{A22}{A22}{R22}'. "main reguliere 4333 de 15+"
-	self assert: m ouverture equals: '1T'.
-
+	self assert: m ouverture equals: '1T'
 ]

@@ -10,18 +10,9 @@ Class {
 }
 
 { #category : 'accessing' }
-NRT4441Sef >> ouv1SA [
-	""
-
-	^ (self main pointH between: 12 and: 13)
-		  ifTrue: [ self unSA ]
-		  ifFalse: [ '' ]
-]
-
-{ #category : 'accessing' }
 NRT4441Sef >> ouvPalier1 [
 
-	^ self main pointH > 13
+	^ self main pointH > 11
 		  ifTrue: [ '1K' ]
 		  ifFalse: [ '' ]
 ]

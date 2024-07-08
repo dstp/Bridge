@@ -30,19 +30,23 @@ ReguliereSef >> estSemiReguliere [
 { #category : 'accessing' }
 ReguliereSef >> ouv1SA [
 
-	^ (self main pointH between: 12 and: 14) ifTrue: [ self unSA ] ifFalse: [ '' ]
+	^ (self main pointH between: 15 and: 17)
+		  ifTrue: [ self unSA ]
+		  ifFalse: [ '' ]
 ]
 
 { #category : 'accessing' }
-ReguliereSef >> ouv2SA [ 
+ReguliereSef >> ouv2SA [
 
-	^ (self main pointH between: 21 and: 22) ifTrue: [ self deuxSA ] ifFalse: [ '' ]
+	^ (self main pointH between: 20 and: 21)
+		  ifTrue: [ self deuxSA ]
+		  ifFalse: [ '' ]
 ]
 
 { #category : 'accessing' }
 ReguliereSef >> ouvPalier1 [
 
-	^ self main pointH > 14
+	^ ((self main pointH between: 12 and: 14) or: (self main pointH between: 18 and: 19))
 		  ifTrue: [ '1T' ]
 		  ifFalse: [ '' ]
 ]

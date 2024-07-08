@@ -12,7 +12,8 @@ Class {
 		'piques',
 		'trefles',
 		'distribution',
-		'assCoul'
+		'assCoul',
+		'convention'
 	],
 	#category : 'Bridge-Base',
 	#package : 'Bridge',
@@ -92,6 +93,17 @@ Main >> coeurs [
 ]
 
 { #category : 'accessing' }
+Main >> convention [
+
+	^ convention ifNil: [ convention := 'Fan' ]
+]
+
+{ #category : 'accessing' }
+Main >> convention: aString [ 
+	convention := aString
+]
+
+{ #category : 'accessing' }
 Main >> distribCouleurs [
 
 	^ (self assCoul collect: [ :e | Carte couleurs at: e key ])
@@ -139,6 +151,7 @@ Main >> distribution [
 			   (distrib copyFrom: 2 to: 3) < '4' ]) ifTrue: [
 			  nClass := 'NRUnicolore' ].
 		  distrib size > 4 ifTrue: [ nClass := 'NRUnicolore' ].
+			nClass := nClass , self convention.
 		  distribution := (self class environment at: nClass asSymbol) new
 			                  main: self ]
 ]
@@ -185,6 +198,19 @@ Main >> piques [
 Main >> pointH [
 
 	^ self piques pointH + self coeurs pointH + self carreaux pointH + self trefles pointH
+]
+
+{ #category : 'accessing' }
+Main >> pointHL [
+
+	^ self pointH + self pointL
+]
+
+{ #category : 'accessing' }
+Main >> pointL [
+
+	^ self piques pointL + self coeurs pointL + self carreaux pointL
+	  + self trefles pointL
 ]
 
 { #category : 'printing' }
