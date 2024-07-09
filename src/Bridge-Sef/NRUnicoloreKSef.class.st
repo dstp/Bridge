@@ -5,3 +5,10 @@ Class {
 	#package : 'Bridge-Sef',
 	#tag : 'Sef'
 }
+
+{ #category : 'accessing' }
+NRUnicoloreKSef >> ouvPalier2 [ 
+	""
+	
+^ ''
+]

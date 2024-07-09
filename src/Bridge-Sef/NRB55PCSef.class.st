@@ -16,9 +16,3 @@ NRB55PCSef >> ouv2T [
 		  ifTrue: [ '2T' ]
 		  ifFalse: [ '' ]
 ]
-
-{ #category : 'accessing' }
-NRB55PCSef >> ouvPalier2 [
-
-	^ ''
-]

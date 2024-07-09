@@ -19,5 +19,18 @@ DistibutionSefTest >> testCreation [
 	self assert: m ouverture equals: '1P'.
 	m cartesFromString: '{ARDX987}{X832}{}{52}'.
 	self assert: m pointHL equals: 12.
-	self assert: m ouverture equals: 'Passe'
+	self assert: m ouverture equals: '1P' .
+	m cartesFromString: '{ARX9872}{V832}{}{52}'.
+	self assert: m pointHL equals: 11.
+	self assert: m ouverture equals: 'Passe' .
+	m cartesFromString: '{ARX9872}{}{V832}{52}'.
+	self assert: m pointHL equals: 11.
+	self assert: m ouverture equals: '4P' .
+	m cartesFromString: '{ARX9872}{2}{V83}{52}'.
+	self assert: m pointHL equals: 11.
+	self assert: m ouverture equals: '3P' 
+	
+
+
+
 ]

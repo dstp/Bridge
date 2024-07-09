@@ -8,11 +8,3 @@ Class {
 	#package : 'Bridge-Sef',
 	#tag : 'Sef'
 }
-
-{ #category : 'accessing' }
-NRB54MajeurSef >> ouvPalier2 [
-
-	"jamais avec l'autre majeure"
-	
-	^ ''
-]

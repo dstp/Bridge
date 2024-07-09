@@ -16,8 +16,3 @@ NRT4441Sef >> ouvPalier1 [
 		  ifTrue: [ '1K' ]
 		  ifFalse: [ '' ]
 ]
-
-{ #category : 'accessing' }
-NRT4441Sef >> ouvPalier2 [
-	^ ''
-]

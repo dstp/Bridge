@@ -46,14 +46,7 @@ SemiReguliereSef >> ouv2SA [
 { #category : 'accessing' }
 SemiReguliereSef >> ouvPalier1 [
 
-	^ self main pointH > 13
+	^ (self main pointH > 11 or: [ self main pointHL > 12 ])
 		  ifTrue: [ self unPalier ]
 		  ifFalse: [ '' ]
-]
-
-{ #category : 'accessing' }
-SemiReguliereSef >> ouvPalier2 [
-	"jamais"
-	
-	^ ''
 ]

@@ -10,10 +10,7 @@ Class {
 }
 
 { #category : 'accessing' }
-R4432CKSef >> ouvPalier1 [
+R4432CKSef >> couleur [
 
-	^ ((self main pointH between: 12 and: 14) or:
-		   (self main pointH between: 18 and: 19))
-		  ifTrue: [ '1K' ]
-		  ifFalse: [ '' ]
+	^ '1K'
 ]

@@ -47,10 +47,11 @@ CarteCaseTest >> testCreationMain [
 	uneMain cartes: (Carte donne: 18).
 	self assert: uneMain cartes size equals: 18.
 	" Pour les tests "
+	uneMain convention: 'Sef' .
 	uneMain := uneMain cartesFromString: '{ARX92}{V82}{22}{542}'.
 	self assert: uneMain cartes size equals: 13.
 	self assert: uneMain cartesAsString equals: '{ARX92}{V82}{22}{542}'.
 	self assert: uneMain pointH equals: 8.
-self assert: uneMain distribution class name equals: 'SR5332P'
-.	^ self
+	self assert: uneMain distribution class name equals: 'SR5332PSef'.
+	^ self
 ]

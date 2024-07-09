@@ -8,3 +8,9 @@ Class {
 	#package : 'Bridge-Sef',
 	#tag : 'Sef'
 }
+
+{ #category : 'accessing' }
+R4432PTSef >> couleur [
+
+	^ '1T'
+]

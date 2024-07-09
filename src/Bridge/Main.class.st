@@ -156,27 +156,51 @@ Main >> distribution [
 ]
 
 { #category : 'accessing' }
+Main >> laDeuxieme [
+
+	^ Carte couleurs at: (self assCoul at: 2) key
+]
+
+{ #category : 'accessing' }
+Main >> laDeuxiemeDe [
+
+	^ (self assCoul at: 2) value
+]
+
+{ #category : 'accessing' }
 Main >> laPlusCourte [
 
-	^ self distribCouleurs last asString
+	^ Carte couleurs at: (self assCoul at: 4) key
+]
+
+{ #category : 'accessing' }
+Main >> laPlusCourteDe [
+
+	^ (self assCoul at: 4) value
 ]
 
 { #category : 'accessing' }
 Main >> laPlusLongue [
 
-	^ self distribCouleurs first asString
+	^ Carte couleurs at: (self assCoul at: 1) key
 ]
 
 { #category : 'accessing' }
 Main >> laPlusLongueDe [
 
-	^ self assCoul first value
+	^ (self assCoul at: 1) value
 ]
 
 { #category : 'accessing' }
-Main >> laSuivanteDe [
+Main >> laTroisieme [
 
-	^ (self assCoul at: 2) value
+	^ Carte couleurs at: (self assCoul at: 3) key
+]
+
+{ #category : 'accessing' }
+Main >> laTroisiemeDe [
+
+	^ (self assCoul at: 3) value
 ]
 
 { #category : 'accessing' }

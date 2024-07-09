@@ -58,10 +58,3 @@ ReguliereSef >> ouvPalier1 [
 		  ifTrue: [ '1T' ]
 		  ifFalse: [ '' ]
 ]
-
-{ #category : 'accessing' }
-ReguliereSef >> ouvPalier2 [
-	"jamais"
-
-	^ ''
-]

@@ -64,7 +64,49 @@ NonReguliereSef >> ouvPalier1 [
 { #category : 'accessing' }
 NonReguliereSef >> ouvPalier2 [
 
-	^ (self main pointH between: 6 and: 10)
-		  ifTrue: [ '2' , self coulPalier2 ]
+	^ ((self main pointH between: 6 and: 10) and: [
+		   self main laPlusLongueDe = 6 ])
+		  ifTrue: [ '2' , self main laPlusLongue ]
+		  ifFalse: [ '' ]
+]
+
+{ #category : 'accessing' }
+NonReguliereSef >> ouvPalier3 [
+
+	^ ((self main pointH between: 6 and: 10) and: [ self main laPlusLongueDe = 7 ])
+		  ifTrue: [ '3' , self main laPlusLongue ]
+		  ifFalse: [ '' ]
+]
+
+{ #category : 'accessing' }
+NonReguliereSef >> ouvPalier4 [ 
+
+	^ ((self main pointH between: 6 and: 10) and: [ self main laPlusLongueDe = 8 ])
+		  ifTrue: [ '4' , self main laPlusLongue ]
+		  ifFalse: [ '' ]
+]
+
+{ #category : 'accessing' }
+NonReguliereSef >> ouvPalier5 [ 
+
+	^ ((self main pointH between: 6 and: 10) and: [ self main laPlusLongueDe = 9 ])
+		  ifTrue: [ '5' , self main laPlusLongue ]
+		  ifFalse: [ '' ]
+]
+
+{ #category : 'accessing' }
+NonReguliereSef >> ouvPalier6 [
+	^ ((self main pointH between: 6 and: 10) and: [
+		   self main laPlusLongueDe = 10 ])
+		  ifTrue: [ '6' , self main laPlusLongue ]
+		  ifFalse: [ '' ]
+]
+
+{ #category : 'accessing' }
+NonReguliereSef >> ouvPalier7 [
+
+	^ ((self main pointH between: 6 and: 10) and: [
+		   self main laPlusLongueDe = 11 ])
+		  ifTrue: [ '7' , self coulPalier2 ]
 		  ifFalse: [ '' ]
 ]
