@@ -160,3 +160,14 @@ Suite >> printOn: aStream [
 		nextPutAll: (self sort reversed joinUsing: '');
 		nextPutAll: '}'
 ]
+
+{ #category : 'accessing' }
+Suite >> qualite [
+	"evaluer la qualite
+	chicane A AR ARD ARDV ARDVX -> 0
+	9 99 999 9999 99999 -> 1
+	"
+	^ self isEmpty 
+		  ifFalse: [ self size - self leveesDeJeu / self size ]
+		  ifTrue: [ 0 ]
+]
