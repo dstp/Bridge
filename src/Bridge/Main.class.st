@@ -1,5 +1,7 @@
 "
 une main de bridge comprend 13 cartes
+- leveesDeJeu, leveesDeDefense, perdantes, pointH, pointL, pointD ...
+- ouverture suivant les conventions (Fantunes ou Sef)
 "
 Class {
 	#name : 'Main',

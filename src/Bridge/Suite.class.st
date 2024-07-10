@@ -1,5 +1,6 @@
 "
 Je représente une suite de cartes de la même couleur
+- leveesDeJeu, leveesDeDefense, perdantes, pointH, pointL, pointD
 "
 Class {
 	#name : 'Suite',
@@ -10,21 +11,23 @@ Class {
 }
 
 { #category : 'accessing' }
-Suite >> as [
-
-	^ self select: [ :c | #( 'A' 'R' 'D' 'V' ) includes: c nom ]
-]
-
-{ #category : 'accessing' }
 Suite >> leveesDeDefense [
 
-	^ (self leveesHonneur - (self size - 3 max: 0)) max: 0
+	^ (self leveesHonneur - (self size
+		   caseOf: {
+				   ([ 0 ] -> [ 0 ]).
+				   ([ 1 ] -> [ 0 ]).
+				   ([ 2 ] -> [ 0 ]).
+				   ([ 3 ] -> [ 0 ]).
+				   ([ 4 ] -> [ 0.5 ]).
+				   ([ 5 ] -> [ 1 ]) }
+		   otherwise: 10)) max: 0
 ]
 
 { #category : 'accessing' }
 Suite >> leveesDeJeu [
 
-	^ self leveesDeLongueur + self leveesHonneur
+	^ self leveesDeLongueur + self leveesHonneur min: self size
 ]
 
 { #category : 'accessing' }
@@ -41,13 +44,15 @@ Suite >> leveesDeLongueur [
 { #category : 'accessing' }
 Suite >> leveesHonneur [
 
-	^ (self select: [ :c | #( 'A' 'R' 'D' 'V' 'X' ) includes: c nom ])
-		  asString
+	| v1 v2 |
+	v1 := self select: [ :c | #( 'A' 'R' 'D' 'V' 'X' ) includes: c nom ].
+	v2 := self size - v1 size.
+	^ v1 asString
 		  caseOf: {
-				  ([ '{ARDVX}' ] -> [ 3.5 ]).
-				  ([ '{ARDV}' ] -> [ 3.5 ]).
-				  ([ '{ARDX}' ] -> [ 3.0 ]).
-				  ([ '{ARVX}' ] -> [ 2.5 ]).
+				  ([ '{ARDVX}' ] -> [ 5 ]).
+				  ([ '{ARDV}' ] -> [ 4 ]).
+				  ([ '{ARDX}' ] -> [ 3.5 ]).
+				  ([ '{ARVX}' ] -> [ 3.5 ]).
 				  ([ '{ADVX}' ] -> [ 3.5 ]).
 				  ([ '{ARD}' ] -> [ 3.0 ]).
 				  ([ '{ARV}' ] -> [ 2.5 ]).
@@ -57,23 +62,47 @@ Suite >> leveesHonneur [
 				  ([ '{AVX}' ] -> [ 1.75 ]).
 				  ([ '{AR}' ] -> [ 2.0 ]).
 				  ([ '{AD}' ] -> [ 1.5 ]).
-				  ([ '{AV}' ] -> [ 1.0 ]).
+				  ([ '{AV}' ] -> [
+				   v2 > 0
+					   ifTrue: [ 1.25 ]
+					   ifFalse: [ 1.0 ] ]).
 				  ([ '{AX}' ] -> [ 1.0 ]).
 				  ([ '{A}' ] -> [ 1.0 ]).
-				  ([ '{R}' ] -> [ 0.5 ]).
-				  ([ '{D}' ] -> [ 0.0 ]).
+				  ([ '{R}' ] -> [
+				   v2 > 0
+					   ifTrue: [ 0.5 ]
+					   ifFalse: [ 0.0 ] ]).
+				  ([ '{D}' ] -> [
+				   v2 > 1
+					   ifTrue: [ 0.25 ]
+					   ifFalse: [ 0.0 ] ]).
 				  ([ '{V}' ] -> [ 0.0 ]).
 				  ([ '{X}' ] -> [ 0.0 ]).
-				  ([ '{RDVX}' ] -> [ 2.5 ]).
-				  ([ '{RDV}' ] -> [ 2.5 ]).
-				  ([ '{RDX}' ] -> [ 2.0 ]).
+				  ([ '{RDVX}' ] -> [ 3.0 ]).
+				  ([ '{RDV}' ] -> [
+				   v2 > 0
+					   ifTrue: [ 2.5 ]
+					   ifFalse: [ 2.0 ] ]).
+				  ([ '{RDX}' ] -> [ 1.5 ]).
 				  ([ '{RVX}' ] -> [ 1.5 ]).
-				  ([ '{RD}' ] -> [ 1.0 ]).
-				  ([ '{RV}' ] -> [ 0.5 ]).
+				  ([ '{RD}' ] -> [
+				   v2 > 0
+					   ifTrue: [ 1.5 ]
+					   ifFalse: [ 1.0 ] ]).
+				  ([ '{RV}' ] -> [
+				   v2 > 0
+					   ifTrue: [ 0.75 ]
+					   ifFalse: [ 0.5 ] ]).
 				  ([ '{RX}' ] -> [ 0.5 ]).
 				  ([ '{DVX}' ] -> [ 1.0 ]).
-				  ([ '{DV}' ] -> [ 0.75 ]).
-				  ([ '{DX}' ] -> [ 0.25 ]).
+				  ([ '{DV}' ] -> [
+				   v2 > 0
+					   ifTrue: [ 0.75 ]
+					   ifFalse: [ 0.0 ] ]).
+				  ([ '{DX}' ] -> [
+				   v2 > 1
+					   ifTrue: [ 0.25 ]
+					   ifFalse: [ 0.0 ] ]).
 				  ([ '{VX}' ] -> [ 0.0 ]) }
 		  otherwise: 0
 ]

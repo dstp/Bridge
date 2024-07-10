@@ -52,6 +52,7 @@ DistibutionFanTest >> testCreation [
 	self assert: m ouverture equals: '1T'.
 	m cartesFromString: '{A832}{RV45}{D345}{A}'.
 	self assert: m ouverture equals: '1K'.
+	"5422 5332 14"
 	m cartesFromString: '{A8329}{RV5}{D35}{A5}'.
 	self assert: m ouverture equals: '1SA'.
 	m cartesFromString: '{22222}{2222}{AR}{AR}'.

@@ -1,5 +1,9 @@
 "
-Présente une hiérarchie des différentes distributions
+Hiérarchie des différentes distributions
+NonRéguliere, Réguliere et SemiReguliere ... Bicolore, Tricolore, Unicolore.
+Je suis associée à une main et partant en fonction de ses points et de sa convention, je suis à même de déterminer une enchère (concept à définir).
+- ouverture
+- réponse et suite des enchères à définir
 "
 Class {
 	#name : 'Distribution',
