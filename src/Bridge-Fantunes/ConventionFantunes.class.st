@@ -1,9 +1,10 @@
 "
 Système d'enchères Fantunes
+
 "
 Class {
 	#name : 'ConventionFantunes',
-	#superclass : 'Distribution',
+	#superclass : 'DistributionFantunes',
 	#category : 'Bridge-Fantunes-Fantunes',
 	#package : 'Bridge-Fantunes',
 	#tag : 'Fantunes'

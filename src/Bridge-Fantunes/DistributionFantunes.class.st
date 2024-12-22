@@ -1,9 +1,10 @@
 "
-Tricolore 5440 CPTK
+Les conventions vues coté distribution
+
 "
 Class {
-	#name : 'NRTCPTFan',
-	#superclass : 'NRTM54Fan',
+	#name : 'DistributionFantunes',
+	#superclass : 'Distribution',
 	#category : 'Bridge-Fantunes-Fantunes',
 	#package : 'Bridge-Fantunes',
 	#tag : 'Fantunes'

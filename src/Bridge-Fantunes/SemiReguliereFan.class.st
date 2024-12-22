@@ -53,7 +53,7 @@ SemiReguliereFan >> ouvPalier1 [
 
 { #category : 'accessing' }
 SemiReguliereFan >> ouvPalier2 [
-	"jamais"
+	"jamais sauf en 3èmè position"
 	
 	^ ''
 ]
