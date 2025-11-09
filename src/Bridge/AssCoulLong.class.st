@@ -17,7 +17,7 @@ Class {
 
 { #category : 'testing' }
 AssCoulLong >> < unAutre [
-
+	"Test SSH"
 	^ self value < unAutre value or: [
 		  self value = unAutre value and: [ self key > unAutre key ] ]
 ]
