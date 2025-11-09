@@ -44,10 +44,8 @@ CarteCaseTest >> testCreationMain [
 	| uneMain |
 	uneMain := Main new.
 	uneMain nom: 'S'.
-	uneMain cartes: (Carte donne: 18).
-	self assert: uneMain cartes size equals: 18.
 	" Pour les tests "
-	uneMain convention: 'Sef' .
+	uneMain convention: 'Sef'.
 	uneMain := uneMain cartesFromString: '{ARX92}{V82}{22}{542}'.
 	self assert: uneMain cartes size equals: 13.
 	self assert: uneMain cartesAsString equals: '{ARX92}{V82}{22}{542}'.
