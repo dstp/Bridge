@@ -1,5 +1,5 @@
 "
-Bridge
+Bridge test ssh
 "
 Class {
 	#name : 'Bridge',
