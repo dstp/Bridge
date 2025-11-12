@@ -1,5 +1,5 @@
 "
-Premiers test sur la convention Fantunes
+ou es-tu
 "
 Class {
 	#name : 'Bridge',
