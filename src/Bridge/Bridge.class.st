@@ -1,5 +1,5 @@
 "
-ou es-tu
+Bridge
 "
 Class {
 	#name : 'Bridge',
