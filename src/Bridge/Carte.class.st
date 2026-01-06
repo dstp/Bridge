@@ -57,15 +57,26 @@ Carte class >> couleurs [
 ]
 
 { #category : 'private' }
+Carte class >> distribue: unNb [
+	"retourne unNb de cartes"
+
+	| cs |
+	unNb = 0 ifTrue: [ ^ self cartes class new ].
+	cs := self cartes.
+	cs size >= unNb ifTrue: [ cs := cs shuffled copyFrom: 1 to: unNb ].
+	cartes := self cartes reject: [ :c | cs includes: c ].
+	^ cs
+]
+
+{ #category : 'private' }
 Carte class >> donne: unNb [
 	"retourne unNb de cartes"
 
 	| cs |
 	unNb = 0 ifTrue: [ ^ self cartes class new ].
 	cs := self cartes.
-	cs size >= unNb ifTrue: [
-		cs := cs shuffled copyFrom: 1 to: unNb ].
-	cartes := self cartes reject: [ :c | cs includes: c ].
+	cs size >= unNb ifTrue: [ cs := cs shuffled copyFrom: 1 to: unNb ].
+	"cartes := self cartes reject: [ :c | cs includes: c ]."
 	^ cs
 ]
 
