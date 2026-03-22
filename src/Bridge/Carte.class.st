@@ -83,7 +83,6 @@ Carte class >> trefle [
 
 { #category : 'comparing' }
 Carte >> + unNb [
-	"Test iceberg"
 	^ unNb + self pointH
 ]
 
