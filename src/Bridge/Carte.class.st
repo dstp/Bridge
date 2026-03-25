@@ -90,7 +90,6 @@ Carte class >> trefle [
 
 { #category : 'comparing' }
 Carte >> < uneCarte [
-	"Test"
 	^ self couleur = uneCarte couleur and: [ self rang < uneCarte rang ]
 ]
 
