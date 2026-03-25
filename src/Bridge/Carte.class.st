@@ -59,7 +59,14 @@ Carte class >> couleurs [
 { #category : 'private' }
 Carte class >> donne: unNb [
 	"retourne unNb de cartes"
-	^ self cartes shuffled copyFrom: 1 to: unNb
+
+	| cs |
+	unNb = 0 ifTrue: [ ^ self cartes class new ].
+	cs := self cartes.
+	cs size >= unNb ifTrue: [
+		cs := cs shuffled copyFrom: 1 to: unNb ].
+	cartes := self cartes reject: [ :c | cs includes: c ].
+	^ cs
 ]
 
 { #category : 'private' }
@@ -82,18 +89,6 @@ Carte class >> trefle [
 ]
 
 { #category : 'comparing' }
-Carte >> + unNb [
-
-	^  unNb + self pointH
-]
-
-{ #category : 'comparing' }
-Carte >> - unNb [
-
-	^ unNb - self pointH
-]
-
-{ #category : 'comparing' }
 Carte >> < uneCarte [
 	^ self couleur = uneCarte couleur and: [  self rang < uneCarte rang ]
 ]
@@ -108,13 +103,6 @@ Carte >> <= uneCarte [
 Carte >> = uneCarte [
 
 	^ self couleur = uneCarte couleur and: [ self rang = uneCarte rang ]
-]
-
-{ #category : 'comparing' }
-Carte >> adaptToNumber: rcvr andSend: selector [
-
-	selector == #+ ifTrue: [ ^ self + rcvr ].
-	selector == #- ifTrue: [ ^ self - rcvr ]
 ]
 
 { #category : 'accessing' }
@@ -154,7 +142,10 @@ Carte >> pointH [
 
 { #category : 'printing' }
 Carte >> printOn: aStream [
-	aStream nextPutAll: self nom
+
+	aStream
+		nextPutAll: self nom;
+		nextPutAll: self couleur
 ]
 
 { #category : 'accessing' }
