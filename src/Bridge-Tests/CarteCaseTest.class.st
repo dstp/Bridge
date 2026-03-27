@@ -18,6 +18,8 @@ CarteCaseTest >> testCreationCarte [
 	une couleur : 'P' pour pique, 'C' pour coeur, 'K' pour carreau ou 'T' pour trèfle
 	un rang de 1 a 13
 	un nom 'A' 'R' 'D' 'V' 'X' '9' '8' '7' '6' '5' '4' '3' '2' "
+	
+	"Nouveau test pour Iceberg"
 
 	| uneCarte |
 	uneCarte := Carte new.
