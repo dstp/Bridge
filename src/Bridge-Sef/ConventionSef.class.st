@@ -3,7 +3,7 @@ Le système d'enchères français
 "
 Class {
 	#name : 'ConventionSef',
-	#superclass : 'Distribution',
+	#superclass : 'DistributionSef',
 	#category : 'Bridge-Sef-Sef',
 	#package : 'Bridge-Sef',
 	#tag : 'Sef'
